@@ -1,0 +1,83 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Hugo - Tag - #/home/maru</title>
+        <link>https://debelzak.github.io/tags/hugo/</link>
+        <description>Hugo - Tag - #/home/maru</description>
+        <generator>Hugo -- gohugo.io</generator><language>pt-br</language><managingEditor>debelzak26@gmail.com (Debelzak)</managingEditor>
+            <webMaster>debelzak26@gmail.com (Debelzak)</webMaster><lastBuildDate>Tue, 16 Jan 2024 17:51:25 -0300</lastBuildDate><atom:link href="https://debelzak.github.io/tags/hugo/" rel="self" type="application/rss+xml" /><item>
+    <title>Hugo, um gerador de sites estáticos.</title>
+    <link>https://debelzak.github.io/hugo/</link>
+    <pubDate>Tue, 16 Jan 2024 17:51:25 -0300</pubDate><author>
+        <name>Debelzak</name>
+    </author><guid>https://debelzak.github.io/hugo/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/hugo/images/featured-image.png" referrerpolicy="no-referrer">
+            </div><h1 id="hugo" class="headerLink">
+    <a href="#hugo" class="header-mark"></a>Hugo</h1><p>Hugo é um gerador de sites estáticos de código aberto escrito em Go. Ele permite criar sites estáticos de forma rápida e
+fácil, sendo uma ferramenta popular entre desenvolvedores web e criadores de conteúdo.</p>
+<h2 id="comandos" class="headerLink">
+    <a href="#comandos" class="header-mark"></a>Comandos</h2><h3 id="new" class="headerLink">
+    <a href="#new" class="header-mark"></a>new</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-0-1"><a class="lnlinks" href="#hl-0-1">1</a>
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">hugo new site &lt;site-name&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Ao executar esse comando, o hugo criará uma pasta e irá gerar um novo site nela. É útil para inicializar um novo projeto.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-1-1"><a class="lnlinks" href="#hl-1-1">1</a>
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">hugo new posts/&lt;file-name&gt;.md
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Esse comando irá criar um novo arquivo. Neste caso, criará um novo post na pasta destino, contendo apenas informações de
+header. Por padrão ele cria um arquivo com propriedade <code>draft: false</code>, o que significa que o post é um rascunho e não será
+exibido na página.</p>
+<h2 id="testando" class="headerLink">
+    <a href="#testando" class="header-mark"></a>Testando</h2><p>Para testar seu site/blog, basta entrar no diretório contendo o arquivo hugo.toml e executar o comando</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-2-1"><a class="lnlinks" href="#hl-2-1">1</a>
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">hugo serve
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Esse comando vai criar um servidor local em uma porta aleatória em <code>localhost</code> para você visualizar seu site final antes
+de precisar compilar.</p>
+<h2 id="compilando" class="headerLink">
+    <a href="#compilando" class="header-mark"></a>Compilando</h2><p>Para compilar é muito simples. Basta digitar o comando na pasta raiz do projeto.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-3-1"><a class="lnlinks" href="#hl-3-1">1</a>
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">hugo
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>O hugo criará todos os arquivos web (<code>.html, .css</code>) prontos para serem hospedados.</p>
+<p>Utilizar a flag <code>-t &lt;theme-name&gt;</code> em seguida faz o site ser compilado utilizando um tema em específico da pasta <code>themes</code>.</p>
+<h2 id="pro-tips" class="headerLink">
+    <a href="#pro-tips" class="header-mark"></a>Pro-tips</h2><p>Algumas dicas que eu aprendi na minha experiência utilizando a ferramenta.</p>
+<h3 id="assets-públicos-em-repositório-submódulo" class="headerLink">
+    <a href="#assets-p%c3%bablicos-em-reposit%c3%b3rio-subm%c3%b3dulo" class="header-mark"></a>Assets públicos em repositório submódulo</h3><p>Por padrão, hugo criará os arquivos compilados na pasta <code>public/</code> da raiz do projeto. Você pode manter seu código-fonte,
+com todos os posts e drafts em formato .md em um repositório privado e adicionar a pasta public/ como um submódulo para
+outro repositório público, onde sua página estará hospedada. Fazendo assim você pode ter liberdade de adicionar qualquer
+informação útil no arquivo md e subir sempre que quiser, e também subir para seu site público com facilidade.</p>
+<p>Primeiro iremos criar uma pasta de submódulo indicando o url do repositório onde estará hospedada o conteúdo
+de <code>public/</code> e em seguida a que será criada, ou seja, <code>public</code> também.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-4-1"><a class="lnlinks" href="#hl-4-1">1</a>
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git submodule add -b main &lt;url-do-repositório&gt; public
+</span></span></code></pre></td></tr></table>
+</div>
+</div>]]></description>
+</item></channel>
+</rss>

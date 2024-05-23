@@ -1,0 +1,300 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Guides - Categoria - #/home/maru</title>
+        <link>https://debelzak.github.io/categories/guides/</link>
+        <description>Guides - Categoria - #/home/maru</description>
+        <generator>Hugo -- gohugo.io</generator><language>pt-br</language><managingEditor>debelzak26@gmail.com (Debelzak)</managingEditor>
+            <webMaster>debelzak26@gmail.com (Debelzak)</webMaster><lastBuildDate>Thu, 23 May 2024 14:40:00 -0300</lastBuildDate><atom:link href="https://debelzak.github.io/categories/guides/" rel="self" type="application/rss+xml" /><item>
+    <title>Utilizando o CMake</title>
+    <link>https://debelzak.github.io/utilizando-o-cmake/</link>
+    <pubDate>Thu, 23 May 2024 14:40:00 -0300</pubDate><author>
+        <name>Debelzak</name>
+    </author><guid>https://debelzak.github.io/utilizando-o-cmake/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/utilizando-o-cmake/images/featured-image.png" referrerpolicy="no-referrer">
+            </div><h1 id="utilizando-o-cmake" class="headerLink">
+    <a href="#utilizando-o-cmake" class="header-mark"></a>Utilizando o CMake</h1><p>O <code>CMakeConfig.txt</code> é um arquivo de configuração utilizado pelo CMake para definir como um projeto deve ser construído, incluindo definições de variáveis, opções de compilação, diretórios de inclusão e outras configurações necessárias. É uma boa escolha especialmente para fazer projetos multiplataforma em C/C++.</p>
+<h2 id="criando-um-projeto-com-o-cmake" class="headerLink">
+    <a href="#criando-um-projeto-com-o-cmake" class="header-mark"></a>Criando um projeto com o CMake</h2><p>O primeiro passo para criar um projeto utilizando o CMake é criando um arquivo <code>CMakeConfig.txt</code> na raiz do projeto.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-0-1"><a class="lnlinks" href="#hl-0-1">1</a>
+</span><span class="lnt" id="hl-0-2"><a class="lnlinks" href="#hl-0-2">2</a>
+</span><span class="lnt" id="hl-0-3"><a class="lnlinks" href="#hl-0-3">3</a>
+</span><span class="lnt" id="hl-0-4"><a class="lnlinks" href="#hl-0-4">4</a>
+</span><span class="lnt" id="hl-0-5"><a class="lnlinks" href="#hl-0-5">5</a>
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmake" data-lang="cmake"><span class="line"><span class="cl"><span class="nb">cmake_minimum_required</span><span class="p">(</span><span class="s">VERSION</span> <span class="s">3.8</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nb">project</span><span class="p">(</span><span class="s2">&#34;Program&#34;</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nb">add_executable</span><span class="p">(</span><span class="o">${</span><span class="nv">PROJECT_NAME</span><span class="o">}</span> <span class="s">main.cpp</span><span class="p">)</span><span class="err">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>Agora vamos criar um arquivo main.cpp</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-1-1"><a class="lnlinks" href="#hl-1-1">1</a>
+</span><span class="lnt" id="hl-1-2"><a class="lnlinks" href="#hl-1-2">2</a>
+</span><span class="lnt" id="hl-1-3"><a class="lnlinks" href="#hl-1-3">3</a>
+</span><span class="lnt" id="hl-1-4"><a class="lnlinks" href="#hl-1-4">4</a>
+</span><span class="lnt" id="hl-1-5"><a class="lnlinks" href="#hl-1-5">5</a>
+</span><span class="lnt" id="hl-1-6"><a class="lnlinks" href="#hl-1-6">6</a>
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Hello World!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="configuração" class="headerLink">
+    <a href="#configura%c3%a7%c3%a3o" class="header-mark"></a>Configuração</h3><p>O CMake usa um processo chamado &ldquo;configuração&rdquo; para criar todos os arquivos necessários para compilar um projeto. Durante essa fase, ele lê as configurações do projeto (normalmente do arquivo CMakeLists.txt) e ajusta tudo conforme o gerador escolhido pelo usuário, como makefiles para o GNU Make ou projetos para o Visual Studio. Isso garante que o projeto seja configurado corretamente para o sistema e ferramentas de desenvolvimento usados, facilitando a compilação e gerenciamento das dependências.</p>
+<p>Vamos gerar uma configuração pro nosso projeto:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-2-1"><a class="lnlinks" href="#hl-2-1">1</a>
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ cmake -B build/ -G <span class="s2">&#34;Visual Studio 17 2022&#34;</span> .
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><code>-B &lt;diretório&gt;</code> : Diretório que os arquivos de build serão colocados.</li>
+<li><code>-G &lt;gerador&gt;</code> : Gerador alvo que serão feitas os arquivos de projeto, como por exemplo &ldquo;Visual Studio 17 2022&rdquo; para windows ou &ldquo;Unix Makefiles&rdquo; para linux. Você pode consultar todos os geradores disponíveis através do comando <code>cmake --help</code>. Caso não definida essa flag, um gerador padrão definido pelo CMake será utilizado.</li>
+<li><code>.</code> : Diretório onde está o CMakeConfig.txt</li>
+</ul>
+<h3 id="compilando" class="headerLink">
+    <a href="#compilando" class="header-mark"></a>Compilando</h3><p>Para compilar o projeto vamos utilizar o comando:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-3-1"><a class="lnlinks" href="#hl-3-1">1</a>
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ cmake --build build/ --config Debug
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><code>--build &lt;diretório&gt;</code> : Diretório que os arquivos de build estão.</li>
+<li><code>--config &lt;config&gt;</code> : Tipo de preset de build, como por exemplo: &ldquo;Debug&rdquo; ou &ldquo;Release&rdquo;, caso esta flag não seja especificada, o cmake utilizará o preset &ldquo;Debug&rdquo; por padrão.</li>
+</ul>
+]]></description>
+</item><item>
+    <title>Modificador extern &#34;C&#34;</title>
+    <link>https://debelzak.github.io/extern-c/</link>
+    <pubDate>Wed, 22 May 2024 12:21:02 -0300</pubDate><author>
+        <name>Debelzak</name>
+    </author><guid>https://debelzak.github.io/extern-c/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/extern-c/images/extern-cpp.jpg" referrerpolicy="no-referrer">
+            </div><h1 id="modificador-extern-c" class="headerLink">
+    <a href="#modificador-extern-c" class="header-mark"></a>Modificador <code>extern &quot;C&quot;</code></h1><p>Durante a compilação de um código em C++, o compilador altera os nomes das funções e símbolos no binário. Esse processo é chamado de <code>name mangling</code> e garante que cada símbolo tenha um identificador único. Isso é necessário, por exemplo, para suportar a sobrecarga de funções. Em C, os nomes das funções são mantidos como no código original.</p>
+<p>Para evitar essa renomeação (name mangling) em C++, utilizamos o modificador <code>extern &quot;C&quot;</code>. Esse modificador instrui o compilador a não alterar os nomes dos símbolos, mantendo-os como no código original, o que é útil ao criar bibliotecas que precisam ser usadas em outros projetos e linguagens.</p>
+<h3 id="exemplo-prático" class="headerLink">
+    <a href="#exemplo-pr%c3%a1tico" class="header-mark"></a>Exemplo prático</h3><p>app.cpp</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-0-1"><a class="lnlinks" href="#hl-0-1">1</a>
+</span><span class="lnt" id="hl-0-2"><a class="lnlinks" href="#hl-0-2">2</a>
+</span><span class="lnt" id="hl-0-3"><a class="lnlinks" href="#hl-0-3">3</a>
+</span><span class="lnt" id="hl-0-4"><a class="lnlinks" href="#hl-0-4">4</a>
+</span><span class="lnt" id="hl-0-5"><a class="lnlinks" href="#hl-0-5">5</a>
+</span><span class="lnt" id="hl-0-6"><a class="lnlinks" href="#hl-0-6">6</a>
+</span><span class="lnt" id="hl-0-7"><a class="lnlinks" href="#hl-0-7">7</a>
+</span><span class="lnt" id="hl-0-8"><a class="lnlinks" href="#hl-0-8">8</a>
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;typeinfo&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;c_file.h&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">func</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Ao compilar o arquivo com <code>g++ -c app.cpp</code> e inspecionar o binário resultante com <code>nm app.o</code>, observamos o seguinte:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-1-1"><a class="lnlinks" href="#hl-1-1"> 1</a>
+</span><span class="lnt" id="hl-1-2"><a class="lnlinks" href="#hl-1-2"> 2</a>
+</span><span class="lnt" id="hl-1-3"><a class="lnlinks" href="#hl-1-3"> 3</a>
+</span><span class="lnt" id="hl-1-4"><a class="lnlinks" href="#hl-1-4"> 4</a>
+</span><span class="lnt" id="hl-1-5"><a class="lnlinks" href="#hl-1-5"> 5</a>
+</span><span class="lnt" id="hl-1-6"><a class="lnlinks" href="#hl-1-6"> 6</a>
+</span><span class="lnt" id="hl-1-7"><a class="lnlinks" href="#hl-1-7"> 7</a>
+</span><span class="lnt" id="hl-1-8"><a class="lnlinks" href="#hl-1-8"> 8</a>
+</span><span class="lnt" id="hl-1-9"><a class="lnlinks" href="#hl-1-9"> 9</a>
+</span><span class="lnt" id="hl-1-10"><a class="lnlinks" href="#hl-1-10">10</a>
+</span><span class="lnt" id="hl-1-11"><a class="lnlinks" href="#hl-1-11">11</a>
+</span><span class="lnt" id="hl-1-12"><a class="lnlinks" href="#hl-1-12">12</a>
+</span><span class="lnt" id="hl-1-13"><a class="lnlinks" href="#hl-1-13">13</a>
+</span><span class="lnt" id="hl-1-14"><a class="lnlinks" href="#hl-1-14">14</a>
+</span><span class="lnt" id="hl-1-15"><a class="lnlinks" href="#hl-1-15">15</a>
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ g++ -c app.cpp
+</span></span><span class="line"><span class="cl">$ nm app.o
+</span></span><span class="line"><span class="cl">0000000000000000 b .bss
+</span></span><span class="line"><span class="cl">0000000000000000 d .data
+</span></span><span class="line"><span class="cl">0000000000000000 p .pdata
+</span></span><span class="line"><span class="cl">0000000000000000 r .rdata
+</span></span><span class="line"><span class="cl">0000000000000000 r .rdata$zzz
+</span></span><span class="line"><span class="cl">0000000000000000 t .text
+</span></span><span class="line"><span class="cl">0000000000000000 r .xdata
+</span></span><span class="line"><span class="cl">                 U __main
+</span></span><span class="line"><span class="cl">                 U _Z4funcv
+</span></span><span class="line"><span class="cl">0000000000000000 r _ZNSt8__detail30__integer_to_chars_is_unsignedIjEE
+</span></span><span class="line"><span class="cl">0000000000000001 r _ZNSt8__detail30__integer_to_chars_is_unsignedImEE
+</span></span><span class="line"><span class="cl">0000000000000002 r _ZNSt8__detail30__integer_to_chars_is_unsignedIyEE
+</span></span><span class="line"><span class="cl">0000000000000000 T main
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Aqui, o nome da nossa função func foi renomeado para <code>_Z4funcv</code> no binário. Agora, vamos modificar o código para incluir <code>extern &quot;C&quot;</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-2-1"><a class="lnlinks" href="#hl-2-1"> 1</a>
+</span><span class="lnt" id="hl-2-2"><a class="lnlinks" href="#hl-2-2"> 2</a>
+</span><span class="lnt" id="hl-2-3"><a class="lnlinks" href="#hl-2-3"> 3</a>
+</span><span class="lnt" id="hl-2-4"><a class="lnlinks" href="#hl-2-4"> 4</a>
+</span><span class="lnt" id="hl-2-5"><a class="lnlinks" href="#hl-2-5"> 5</a>
+</span><span class="lnt" id="hl-2-6"><a class="lnlinks" href="#hl-2-6"> 6</a>
+</span><span class="lnt" id="hl-2-7"><a class="lnlinks" href="#hl-2-7"> 7</a>
+</span><span class="lnt" id="hl-2-8"><a class="lnlinks" href="#hl-2-8"> 8</a>
+</span><span class="lnt" id="hl-2-9"><a class="lnlinks" href="#hl-2-9"> 9</a>
+</span><span class="lnt" id="hl-2-10"><a class="lnlinks" href="#hl-2-10">10</a>
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;typeinfo&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">extern</span> <span class="s">&#34;C&#34;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="cp">#include</span> <span class="cpf">&#34;c_file.h&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">func</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Ao recompilar e inspecionar o binário novamente, veremos:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-3-1"><a class="lnlinks" href="#hl-3-1"> 1</a>
+</span><span class="lnt" id="hl-3-2"><a class="lnlinks" href="#hl-3-2"> 2</a>
+</span><span class="lnt" id="hl-3-3"><a class="lnlinks" href="#hl-3-3"> 3</a>
+</span><span class="lnt" id="hl-3-4"><a class="lnlinks" href="#hl-3-4"> 4</a>
+</span><span class="lnt" id="hl-3-5"><a class="lnlinks" href="#hl-3-5"> 5</a>
+</span><span class="lnt" id="hl-3-6"><a class="lnlinks" href="#hl-3-6"> 6</a>
+</span><span class="lnt" id="hl-3-7"><a class="lnlinks" href="#hl-3-7"> 7</a>
+</span><span class="lnt" id="hl-3-8"><a class="lnlinks" href="#hl-3-8"> 8</a>
+</span><span class="lnt" id="hl-3-9"><a class="lnlinks" href="#hl-3-9"> 9</a>
+</span><span class="lnt" id="hl-3-10"><a class="lnlinks" href="#hl-3-10">10</a>
+</span><span class="lnt" id="hl-3-11"><a class="lnlinks" href="#hl-3-11">11</a>
+</span><span class="lnt" id="hl-3-12"><a class="lnlinks" href="#hl-3-12">12</a>
+</span><span class="lnt" id="hl-3-13"><a class="lnlinks" href="#hl-3-13">13</a>
+</span><span class="lnt" id="hl-3-14"><a class="lnlinks" href="#hl-3-14">14</a>
+</span><span class="lnt" id="hl-3-15"><a class="lnlinks" href="#hl-3-15">15</a>
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ g++ -c app.cpp
+</span></span><span class="line"><span class="cl">$ nm app.o
+</span></span><span class="line"><span class="cl">0000000000000000 b .bss
+</span></span><span class="line"><span class="cl">0000000000000000 d .data
+</span></span><span class="line"><span class="cl">0000000000000000 p .pdata
+</span></span><span class="line"><span class="cl">0000000000000000 r .rdata
+</span></span><span class="line"><span class="cl">0000000000000000 r .rdata$zzz
+</span></span><span class="line"><span class="cl">0000000000000000 t .text
+</span></span><span class="line"><span class="cl">0000000000000000 r .xdata
+</span></span><span class="line"><span class="cl">                 U __main
+</span></span><span class="line"><span class="cl">0000000000000000 r _ZNSt8__detail30__integer_to_chars_is_unsignedIjEE
+</span></span><span class="line"><span class="cl">0000000000000001 r _ZNSt8__detail30__integer_to_chars_is_unsignedImEE
+</span></span><span class="line"><span class="cl">0000000000000002 r _ZNSt8__detail30__integer_to_chars_is_unsignedIyEE
+</span></span><span class="line"><span class="cl">                 U func
+</span></span><span class="line"><span class="cl">0000000000000000 T main
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Agora, o nome da nossa função <code>func</code> permanece inalterado no binário. Isso demonstra como <code>extern &quot;C&quot;</code> impede o name mangling, mantendo os nomes das funções como no código original.</p>
+<p>Essa técnica é especialmente útil ao escrever bibliotecas que precisam ser utilizadas em outros projetos e linguagens, garantindo a compatibilidade e a integridade dos nomes das funções.</p>
+]]></description>
+</item><item>
+    <title>Hugo, um gerador de sites estáticos.</title>
+    <link>https://debelzak.github.io/hugo/</link>
+    <pubDate>Tue, 16 Jan 2024 17:51:25 -0300</pubDate><author>
+        <name>Debelzak</name>
+    </author><guid>https://debelzak.github.io/hugo/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/hugo/images/featured-image.png" referrerpolicy="no-referrer">
+            </div><h1 id="hugo" class="headerLink">
+    <a href="#hugo" class="header-mark"></a>Hugo</h1><p>Hugo é um gerador de sites estáticos de código aberto escrito em Go. Ele permite criar sites estáticos de forma rápida e
+fácil, sendo uma ferramenta popular entre desenvolvedores web e criadores de conteúdo.</p>
+<h2 id="comandos" class="headerLink">
+    <a href="#comandos" class="header-mark"></a>Comandos</h2><h3 id="new" class="headerLink">
+    <a href="#new" class="header-mark"></a>new</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-0-1"><a class="lnlinks" href="#hl-0-1">1</a>
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">hugo new site &lt;site-name&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Ao executar esse comando, o hugo criará uma pasta e irá gerar um novo site nela. É útil para inicializar um novo projeto.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-1-1"><a class="lnlinks" href="#hl-1-1">1</a>
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">hugo new posts/&lt;file-name&gt;.md
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Esse comando irá criar um novo arquivo. Neste caso, criará um novo post na pasta destino, contendo apenas informações de
+header. Por padrão ele cria um arquivo com propriedade <code>draft: false</code>, o que significa que o post é um rascunho e não será
+exibido na página.</p>
+<h2 id="testando" class="headerLink">
+    <a href="#testando" class="header-mark"></a>Testando</h2><p>Para testar seu site/blog, basta entrar no diretório contendo o arquivo hugo.toml e executar o comando</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-2-1"><a class="lnlinks" href="#hl-2-1">1</a>
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">hugo serve
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Esse comando vai criar um servidor local em uma porta aleatória em <code>localhost</code> para você visualizar seu site final antes
+de precisar compilar.</p>
+<h2 id="compilando" class="headerLink">
+    <a href="#compilando" class="header-mark"></a>Compilando</h2><p>Para compilar é muito simples. Basta digitar o comando na pasta raiz do projeto.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-3-1"><a class="lnlinks" href="#hl-3-1">1</a>
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">hugo
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>O hugo criará todos os arquivos web (<code>.html, .css</code>) prontos para serem hospedados.</p>
+<p>Utilizar a flag <code>-t &lt;theme-name&gt;</code> em seguida faz o site ser compilado utilizando um tema em específico da pasta <code>themes</code>.</p>
+<h2 id="pro-tips" class="headerLink">
+    <a href="#pro-tips" class="header-mark"></a>Pro-tips</h2><p>Algumas dicas que eu aprendi na minha experiência utilizando a ferramenta.</p>
+<h3 id="assets-públicos-em-repositório-submódulo" class="headerLink">
+    <a href="#assets-p%c3%bablicos-em-reposit%c3%b3rio-subm%c3%b3dulo" class="header-mark"></a>Assets públicos em repositório submódulo</h3><p>Por padrão, hugo criará os arquivos compilados na pasta <code>public/</code> da raiz do projeto. Você pode manter seu código-fonte,
+com todos os posts e drafts em formato .md em um repositório privado e adicionar a pasta public/ como um submódulo para
+outro repositório público, onde sua página estará hospedada. Fazendo assim você pode ter liberdade de adicionar qualquer
+informação útil no arquivo md e subir sempre que quiser, e também subir para seu site público com facilidade.</p>
+<p>Primeiro iremos criar uma pasta de submódulo indicando o url do repositório onde estará hospedada o conteúdo
+de <code>public/</code> e em seguida a que será criada, ou seja, <code>public</code> também.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-4-1"><a class="lnlinks" href="#hl-4-1">1</a>
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git submodule add -b main &lt;url-do-repositório&gt; public
+</span></span></code></pre></td></tr></table>
+</div>
+</div>]]></description>
+</item></channel>
+</rss>

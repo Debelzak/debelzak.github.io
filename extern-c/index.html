@@ -1,0 +1,406 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <title>Modificador extern &#34;C&#34; - #/home/maru</title><meta name="Description" content=""><meta property="og:url" content="https://debelzak.github.io/extern-c/">
+  <meta property="og:site_name" content="#/home/maru">
+  <meta property="og:title" content="Modificador extern &#34;C&#34;">
+  <meta property="og:description" content="Esta anotação se refere ao modificador de C&#43;&#43;">
+  <meta property="og:locale" content="pt_br">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-05-22T12:21:02-03:00">
+    <meta property="article:modified_time" content="2024-05-22T12:21:02-03:00">
+    <meta property="article:tag" content="C&#43;&#43;">
+    <meta property="og:image" content="https://debelzak.github.io/extern-c/images/extern-cpp.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://debelzak.github.io/extern-c/images/extern-cpp.jpg">
+  <meta name="twitter:title" content="Modificador extern &#34;C&#34;">
+  <meta name="twitter:description" content="Esta anotação se refere ao modificador de C&#43;&#43;">
+<meta name="application-name" content="#/home/maru">
+<meta name="apple-mobile-web-app-title" content="#/home/maru">
+
+<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="https://visualpharm.com/assets/707/Source%20Code-595b40b65ba036ed117d45b8.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://debelzak.github.io/extern-c/" /><link rel="prev" href="https://debelzak.github.io/hugo/" /><link rel="next" href="https://debelzak.github.io/utilizando-o-cmake/" />
+<link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/color.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript>
+    
+    
+    
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Modificador extern \"C\"",
+        "inLanguage": "pt-br",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://debelzak.github.io/extern-c/"
+        },"genre": "posts","keywords": "C\u002b\u002b","wordcount":  379 ,
+        "url": "https://debelzak.github.io/extern-c/","datePublished": "2024-05-22T12:21:02-03:00","dateModified": "2024-05-22T12:21:02-03:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Debelzak"
+            },"description": ""
+    }
+    </script></head>
+
+<body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">
+        function setTheme(theme) {document.body.setAttribute('theme', theme); document.documentElement.style.setProperty('color-scheme', theme === 'light' ? 'light' : 'dark'); window.theme = theme;   window.isDark = window.theme !== 'light' }
+        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
+        function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
+        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('auto' === 'light' || 'auto' === 'dark' || 'auto' === 'black') setTheme('auto'), saveTheme('auto'); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
+        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
+        getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
+        window.switchThemeEventSet = new Set()
+    </script>
+    <div id="back-to-top"></div>
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="#/home/maru"><img
+        class="logo"
+        loading="lazy"
+        src="https://visualpharm.com/assets/707/Source%20Code-595b40b65ba036ed117d45b8.svg"
+        srcset="https://visualpharm.com/assets/707/Source%20Code-595b40b65ba036ed117d45b8.svg, https://visualpharm.com/assets/707/Source%20Code-595b40b65ba036ed117d45b8.svg 1.5x, https://visualpharm.com/assets/707/Source%20Code-595b40b65ba036ed117d45b8.svg 2x"
+        sizes="auto"
+        alt="https://visualpharm.com/assets/707/Source%20Code-595b40b65ba036ed117d45b8.svg"
+        title="https://visualpharm.com/assets/707/Source%20Code-595b40b65ba036ed117d45b8.svg" ><span class="header-title-pre">#</span><span id="desktop-header-typeit" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"><i class='fas fa-newspaper fa-fw'></i> Posts </a><a class="menu-item" href="/tags/"><i class='fas fa-tag fa-fw'></i> Tags </a><a class="menu-item" href="/categories/"><i class='fas fa-stream fa-fw'></i> Categorias </a><a class="menu-item" href="https://github.com/debelzak/" title="GitHub" rel="noopener noreferrer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Pesquisar títulos ou conteúdos ..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Pesquisa">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Limpar">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-select" title="Trocar tema">
+                    <i class="fas fa-adjust fa-fw"></i>
+                    <select class="color-theme-select" id="theme-select-desktop" title="Trocar tema">
+                        <option value="light">Claro</option>
+                        <option value="dark">Escuro</option>
+                        <option value="black">Preto</option>
+                        <option value="auto">Auto</option>
+                    </select>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="#/home/maru"><img
+        class="logo"
+        loading="lazy"
+        src="https://visualpharm.com/assets/707/Source%20Code-595b40b65ba036ed117d45b8.svg"
+        srcset="https://visualpharm.com/assets/707/Source%20Code-595b40b65ba036ed117d45b8.svg, https://visualpharm.com/assets/707/Source%20Code-595b40b65ba036ed117d45b8.svg 1.5x, https://visualpharm.com/assets/707/Source%20Code-595b40b65ba036ed117d45b8.svg 2x"
+        sizes="auto"
+        alt="https://visualpharm.com/assets/707/Source%20Code-595b40b65ba036ed117d45b8.svg"
+        title="https://visualpharm.com/assets/707/Source%20Code-595b40b65ba036ed117d45b8.svg" ><span class="header-title-pre">#</span><span id="mobile-header-typeit" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Pesquisar títulos ou conteúdos ..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Pesquisa">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Limpar">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancelar
+                    </a>
+                </div><a class="menu-item" href="/posts/" title=""><i class='fas fa-newspaper fa-fw'></i>Posts</a><a class="menu-item" href="/tags/" title=""><i class='fas fa-tag fa-fw'></i>Tags</a><a class="menu-item" href="/categories/" title=""><i class='fas fa-stream fa-fw'></i>Categorias</a><a class="menu-item" href="https://github.com/debelzak/" title="GitHub" rel="noopener noreferrer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i></a><a href="javascript:void(0);" class="menu-item theme-select" title="Trocar tema">
+                <i class="fas fa-adjust fa-fw"></i>
+                <select class="color-theme-select" id="theme-select-mobile" title="Trocar tema">
+                    <option value="light">Claro</option>
+                    <option value="dark">Escuro</option>
+                    <option value="black">Preto</option>
+                    <option value="auto">Auto</option>
+                </select>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+            <div class="container"><div class="toc" id="toc-auto">
+        <h2 class="toc-title">Conteúdos</h2>
+        <div class="toc-content" id="toc-content-auto"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#exemplo-prático">Exemplo prático</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+    </div><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Modificador extern &#34;C&#34;</h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><span class="author fas fa-user-circle fa-fw"></span><a href="https://debelzak.github.io" title="Author" target="_blank" rel="noopener noreferrer author" class="author">Debelzak</a>
+                </span>&nbsp;<span class="post-category">incluído </span>&nbsp;<span class="post-category">nas categorias <a href="/categories/notes/"><i class="far fa-folder fa-fw"></i>Notes</a>&nbsp;<a href="/categories/guides/"><i class="far fa-folder fa-fw"></i>Guides</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2024-05-22">2024-05-22</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2024-05-22">2024-05-22</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;379 palavras&nbsp;<i class="far fa-clock fa-fw"></i>&nbsp;2 minutos&nbsp;<span id="/extern-c/" class="leancloud_visitors" data-flag-title="Modificador extern &#34;C&#34;">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class="leancloud-visitors-count waline-pageview-count" data-path="/extern-c/"></span>&nbsp;visualizações
+                    </span>&nbsp;<span id="/extern-c/" class="comment_count" data-flag-title="Modificador extern &#34;C&#34;">
+                        <i class="far fa-comments fa-fw"></i>&nbsp;<span class="waline-comment-count" id="waline-comment-count" data-path="/extern-c/"></span>&nbsp;comentários
+                    </span>&nbsp;<span>
+                        <i class="fas fa-balance-scale fa-fw"></i>&nbsp;<span><a rel='license external nofollow noopener noreffer' href='https://opensource.org/license/mit/' target='_blank'>MIT</a></span>&nbsp;
+                    </span>&nbsp;</div>
+        </div><div class="featured-image"><img
+        
+        loading="eager"
+        src="/extern-c/images/extern-cpp.jpg"
+        srcset="/extern-c/images/extern-cpp.jpg, /extern-c/images/extern-cpp.jpg 1.5x, /extern-c/images/extern-cpp.jpg 2x"
+        sizes="auto"
+        alt="/extern-c/images/extern-cpp.jpg"
+        title="/extern-c/images/extern-cpp.jpg" height="768"   width="1360" ></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Conteúdos</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#exemplo-prático">Exemplo prático</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="modificador-extern-c" class="headerLink">
+    <a href="#modificador-extern-c" class="header-mark"></a>Modificador <code>extern &quot;C&quot;</code></h1><p>Durante a compilação de um código em C++, o compilador altera os nomes das funções e símbolos no binário. Esse processo é chamado de <code>name mangling</code> e garante que cada símbolo tenha um identificador único. Isso é necessário, por exemplo, para suportar a sobrecarga de funções. Em C, os nomes das funções são mantidos como no código original.</p>
+<p>Para evitar essa renomeação (name mangling) em C++, utilizamos o modificador <code>extern &quot;C&quot;</code>. Esse modificador instrui o compilador a não alterar os nomes dos símbolos, mantendo-os como no código original, o que é útil ao criar bibliotecas que precisam ser usadas em outros projetos e linguagens.</p>
+<h3 id="exemplo-prático" class="headerLink">
+    <a href="#exemplo-pr%c3%a1tico" class="header-mark"></a>Exemplo prático</h3><p>app.cpp</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-0-1"><a class="lnlinks" href="#hl-0-1">1</a>
+</span><span class="lnt" id="hl-0-2"><a class="lnlinks" href="#hl-0-2">2</a>
+</span><span class="lnt" id="hl-0-3"><a class="lnlinks" href="#hl-0-3">3</a>
+</span><span class="lnt" id="hl-0-4"><a class="lnlinks" href="#hl-0-4">4</a>
+</span><span class="lnt" id="hl-0-5"><a class="lnlinks" href="#hl-0-5">5</a>
+</span><span class="lnt" id="hl-0-6"><a class="lnlinks" href="#hl-0-6">6</a>
+</span><span class="lnt" id="hl-0-7"><a class="lnlinks" href="#hl-0-7">7</a>
+</span><span class="lnt" id="hl-0-8"><a class="lnlinks" href="#hl-0-8">8</a>
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;typeinfo&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;c_file.h&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">func</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Ao compilar o arquivo com <code>g++ -c app.cpp</code> e inspecionar o binário resultante com <code>nm app.o</code>, observamos o seguinte:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-1-1"><a class="lnlinks" href="#hl-1-1"> 1</a>
+</span><span class="lnt" id="hl-1-2"><a class="lnlinks" href="#hl-1-2"> 2</a>
+</span><span class="lnt" id="hl-1-3"><a class="lnlinks" href="#hl-1-3"> 3</a>
+</span><span class="lnt" id="hl-1-4"><a class="lnlinks" href="#hl-1-4"> 4</a>
+</span><span class="lnt" id="hl-1-5"><a class="lnlinks" href="#hl-1-5"> 5</a>
+</span><span class="lnt" id="hl-1-6"><a class="lnlinks" href="#hl-1-6"> 6</a>
+</span><span class="lnt" id="hl-1-7"><a class="lnlinks" href="#hl-1-7"> 7</a>
+</span><span class="lnt" id="hl-1-8"><a class="lnlinks" href="#hl-1-8"> 8</a>
+</span><span class="lnt" id="hl-1-9"><a class="lnlinks" href="#hl-1-9"> 9</a>
+</span><span class="lnt" id="hl-1-10"><a class="lnlinks" href="#hl-1-10">10</a>
+</span><span class="lnt" id="hl-1-11"><a class="lnlinks" href="#hl-1-11">11</a>
+</span><span class="lnt" id="hl-1-12"><a class="lnlinks" href="#hl-1-12">12</a>
+</span><span class="lnt" id="hl-1-13"><a class="lnlinks" href="#hl-1-13">13</a>
+</span><span class="lnt" id="hl-1-14"><a class="lnlinks" href="#hl-1-14">14</a>
+</span><span class="lnt" id="hl-1-15"><a class="lnlinks" href="#hl-1-15">15</a>
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ g++ -c app.cpp
+</span></span><span class="line"><span class="cl">$ nm app.o
+</span></span><span class="line"><span class="cl">0000000000000000 b .bss
+</span></span><span class="line"><span class="cl">0000000000000000 d .data
+</span></span><span class="line"><span class="cl">0000000000000000 p .pdata
+</span></span><span class="line"><span class="cl">0000000000000000 r .rdata
+</span></span><span class="line"><span class="cl">0000000000000000 r .rdata$zzz
+</span></span><span class="line"><span class="cl">0000000000000000 t .text
+</span></span><span class="line"><span class="cl">0000000000000000 r .xdata
+</span></span><span class="line"><span class="cl">                 U __main
+</span></span><span class="line"><span class="cl">                 U _Z4funcv
+</span></span><span class="line"><span class="cl">0000000000000000 r _ZNSt8__detail30__integer_to_chars_is_unsignedIjEE
+</span></span><span class="line"><span class="cl">0000000000000001 r _ZNSt8__detail30__integer_to_chars_is_unsignedImEE
+</span></span><span class="line"><span class="cl">0000000000000002 r _ZNSt8__detail30__integer_to_chars_is_unsignedIyEE
+</span></span><span class="line"><span class="cl">0000000000000000 T main
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Aqui, o nome da nossa função func foi renomeado para <code>_Z4funcv</code> no binário. Agora, vamos modificar o código para incluir <code>extern &quot;C&quot;</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-2-1"><a class="lnlinks" href="#hl-2-1"> 1</a>
+</span><span class="lnt" id="hl-2-2"><a class="lnlinks" href="#hl-2-2"> 2</a>
+</span><span class="lnt" id="hl-2-3"><a class="lnlinks" href="#hl-2-3"> 3</a>
+</span><span class="lnt" id="hl-2-4"><a class="lnlinks" href="#hl-2-4"> 4</a>
+</span><span class="lnt" id="hl-2-5"><a class="lnlinks" href="#hl-2-5"> 5</a>
+</span><span class="lnt" id="hl-2-6"><a class="lnlinks" href="#hl-2-6"> 6</a>
+</span><span class="lnt" id="hl-2-7"><a class="lnlinks" href="#hl-2-7"> 7</a>
+</span><span class="lnt" id="hl-2-8"><a class="lnlinks" href="#hl-2-8"> 8</a>
+</span><span class="lnt" id="hl-2-9"><a class="lnlinks" href="#hl-2-9"> 9</a>
+</span><span class="lnt" id="hl-2-10"><a class="lnlinks" href="#hl-2-10">10</a>
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;typeinfo&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">extern</span> <span class="s">&#34;C&#34;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="cp">#include</span> <span class="cpf">&#34;c_file.h&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">func</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Ao recompilar e inspecionar o binário novamente, veremos:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-3-1"><a class="lnlinks" href="#hl-3-1"> 1</a>
+</span><span class="lnt" id="hl-3-2"><a class="lnlinks" href="#hl-3-2"> 2</a>
+</span><span class="lnt" id="hl-3-3"><a class="lnlinks" href="#hl-3-3"> 3</a>
+</span><span class="lnt" id="hl-3-4"><a class="lnlinks" href="#hl-3-4"> 4</a>
+</span><span class="lnt" id="hl-3-5"><a class="lnlinks" href="#hl-3-5"> 5</a>
+</span><span class="lnt" id="hl-3-6"><a class="lnlinks" href="#hl-3-6"> 6</a>
+</span><span class="lnt" id="hl-3-7"><a class="lnlinks" href="#hl-3-7"> 7</a>
+</span><span class="lnt" id="hl-3-8"><a class="lnlinks" href="#hl-3-8"> 8</a>
+</span><span class="lnt" id="hl-3-9"><a class="lnlinks" href="#hl-3-9"> 9</a>
+</span><span class="lnt" id="hl-3-10"><a class="lnlinks" href="#hl-3-10">10</a>
+</span><span class="lnt" id="hl-3-11"><a class="lnlinks" href="#hl-3-11">11</a>
+</span><span class="lnt" id="hl-3-12"><a class="lnlinks" href="#hl-3-12">12</a>
+</span><span class="lnt" id="hl-3-13"><a class="lnlinks" href="#hl-3-13">13</a>
+</span><span class="lnt" id="hl-3-14"><a class="lnlinks" href="#hl-3-14">14</a>
+</span><span class="lnt" id="hl-3-15"><a class="lnlinks" href="#hl-3-15">15</a>
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ g++ -c app.cpp
+</span></span><span class="line"><span class="cl">$ nm app.o
+</span></span><span class="line"><span class="cl">0000000000000000 b .bss
+</span></span><span class="line"><span class="cl">0000000000000000 d .data
+</span></span><span class="line"><span class="cl">0000000000000000 p .pdata
+</span></span><span class="line"><span class="cl">0000000000000000 r .rdata
+</span></span><span class="line"><span class="cl">0000000000000000 r .rdata$zzz
+</span></span><span class="line"><span class="cl">0000000000000000 t .text
+</span></span><span class="line"><span class="cl">0000000000000000 r .xdata
+</span></span><span class="line"><span class="cl">                 U __main
+</span></span><span class="line"><span class="cl">0000000000000000 r _ZNSt8__detail30__integer_to_chars_is_unsignedIjEE
+</span></span><span class="line"><span class="cl">0000000000000001 r _ZNSt8__detail30__integer_to_chars_is_unsignedImEE
+</span></span><span class="line"><span class="cl">0000000000000002 r _ZNSt8__detail30__integer_to_chars_is_unsignedIyEE
+</span></span><span class="line"><span class="cl">                 U func
+</span></span><span class="line"><span class="cl">0000000000000000 T main
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Agora, o nome da nossa função <code>func</code> permanece inalterado no binário. Isso demonstra como <code>extern &quot;C&quot;</code> impede o name mangling, mantendo os nomes das funções como no código original.</p>
+<p>Essa técnica é especialmente útil ao escrever bibliotecas que precisam ser utilizadas em outros projetos e linguagens, garantindo a compatibilidade e a integridade dos nomes das funções.</p>
+</div>
+
+        
+
+
+<h2></h2>
+<div class="related-container">
+    <div class="related-item-container">
+            <div class="related-image">
+                <a href="/utilizando-o-cmake/"><img
+        
+        loading="lazy"
+        src="/utilizando-o-cmake/images/featured-image.png"
+        srcset="/utilizando-o-cmake/images/featured-image.png, /utilizando-o-cmake/images/featured-image.png 1.5x, /utilizando-o-cmake/images/featured-image.png 2x"
+        sizes="auto"
+        alt="/utilizando-o-cmake/images/featured-image.png"
+        title="/utilizando-o-cmake/images/featured-image.png" height="200"   width="400" ></a>
+            </div><h2 class="related-title">
+                <a href="/utilizando-o-cmake/">Utilizando o CMake</a>
+            </h2>
+        </div>
+    
+
+</div>
+
+<div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Atualizado em 2024-05-22</span>
+            </div>
+            <div class="post-info-license"><span><a rel='license external nofollow noopener noreffer' href='https://opensource.org/license/mit/' target='_blank'>MIT</a></span></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share"><button title="Compartilhe em Twitter" data-sharer="twitter" data-url="https://debelzak.github.io/extern-c/" data-title="Modificador extern &#34;C&#34;" data-hashtags="C&#43;&#43;"><span class="fab fa-twitter fa-fw"></span></button><button title="Compartilhe em Facebook" data-sharer="facebook" data-url="https://debelzak.github.io/extern-c/" data-hashtag="C&#43;&#43;"><span class="fab fa-facebook-square fa-fw"></span></button><button title="Compartilhe em Linkedin" data-sharer="linkedin" data-url="https://debelzak.github.io/extern-c/"><span class="fab fa-linkedin fa-fw"></span></button><button title="Compartilhe em WhatsApp" data-sharer="whatsapp" data-url="https://debelzak.github.io/extern-c/" data-title="Modificador extern &#34;C&#34;" data-web><span class="fab fa-whatsapp fa-fw"></span></button><button title="Compartilhe em Line" data-sharer="line" data-url="https://debelzak.github.io/extern-c/" data-title="Modificador extern &#34;C&#34;"><span data-svg-src="/lib/simple-icons/icons/line.min.svg"></span></button><button title="Compartilhe em 微博" data-sharer="weibo" data-url="https://debelzak.github.io/extern-c/" data-title="Modificador extern &#34;C&#34;" data-image="images/extern-cpp.jpg"><span class="fab fa-weibo fa-fw"></span></button><button title="Compartilhe em Myspace" data-sharer="myspace" data-url="https://debelzak.github.io/extern-c/" data-title="Modificador extern &#34;C&#34;" data-description=""><span data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></span></button><button title="Compartilhe em Blogger" data-sharer="blogger" data-url="https://debelzak.github.io/extern-c/" data-title="Modificador extern &#34;C&#34;" data-description=""><span class="fab fa-blogger fa-fw"></span></button><button title="Compartilhe em Evernote" data-sharer="evernote" data-url="https://debelzak.github.io/extern-c/" data-title="Modificador extern &#34;C&#34;"><span class="fab fa-evernote fa-fw"></span></button></div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/c&#43;&#43;/">C&#43;&#43;</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Voltar</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/hugo/" class="prev" rel="prev" title="Hugo, um gerador de sites estáticos."><i class="fas fa-angle-left fa-fw"></i>Hugo, um gerador de sites estáticos.</a>
+            <a href="/utilizando-o-cmake/" class="next" rel="next" title="Utilizando o CMake">Utilizando o CMake<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="waline" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://waline.js.org/">Waline</a>.
+            </noscript></div></article></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">
+                    Hospedado em <a title="Github Pages" href="https://docs.github.com/br/pages/" target="_blank" rel="noopener noreffer">GitHub Pages</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://debelzak.github.io" target="_blank" rel="noopener noreferrer">Debelzak</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://opensource.org/license/mit/" target="_blank">MIT</a></span></div>
+            <div class="footer-line"></div>
+            <div class="footer-line">
+            </div>
+        </div><script>
+                    if('serviceWorker' in navigator) {
+                        navigator.serviceWorker
+                            .register('/sw.min.js', { scope: '/' })
+                            .then(function(registration) {
+                            });
+                
+                        navigator.serviceWorker
+                            .ready
+                            .then(function(registration) {
+                            });
+                    }
+                </script></footer></div>
+
+    <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="Voltar ao topo">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="Ver comentários">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><div id="cookieconsent-container"></div><div class="assets"><link rel="stylesheet" href="/lib/waline/waline.min.css"><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/katex/copy-tex.min.css">
+        <noscript><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"></noscript><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript">window.config={"code":{"copyTitle":"Copiar para a área de transferência","maxShownLines":50},"comment":{"waline":{"comment":true,"copyright":true,"dark":"body[theme='dark'], body[theme='black']","el":"#waline","emoji":["https://unpkg.com/@waline/emojis@1.1.0/tw-emoji","https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo","https://unpkg.com/@waline/emojis@1.1.0/alus","https://unpkg.com/@waline/emojis@1.1.0/bmoji","https://unpkg.com/@waline/emojis@1.1.0/bilibili","https://unpkg.com/@waline/emojis@1.1.0/qq","https://unpkg.com/@waline/emojis@1.1.0/tieba"],"lang":"pt-br","login":"enable","pageSize":10,"pageview":true,"reaction":true,"serverURL":"https://debelzak-waline.vercel.app/"}},"cookieconsent":{"content":{"dismiss":"Entendi!","link":"Saber mais","message":"Este site usa Cookies para melhorar sua experiência."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"desktop-header-typeit":"/home/maru","mobile-header-typeit":"/home/maru"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"Nenhum resultado encontrado","snippetLength":30,"threshold":0.3,"useExtendedSearch":false},"sharerjs":true,"table":{"sort":true},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"desktop-header-typeit":["desktop-header-typeit"],"mobile-header-typeit":["mobile-header-typeit"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.fill%2CArray.prototype.find%2CArray.from%2CIntersectionObserver%2CMath.sign%2CObject.assign%2CPromise%2CObject.entries%2Chtml5shiv%2CObject.values%2Cfetch%2CElement.prototype.after"></script><script type="text/javascript" src="/lib/object-fit-images/ofi.min.js"></script><script type="text/javascript" src="/lib/tablesort/tablesort.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/typeit/typeit.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js" defer></script><script type="text/javascript" src="/lib/katex/auto-render.min.js" defer></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js" defer></script><script type="text/javascript" src="/lib/katex/mhchem.min.js" defer></script><script type="text/javascript" src="/js/katex.min.js" defer></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script type="text/javascript" src="/js/cookieconsent.min.js" defer></script><script type="text/javascript" src="/js/theme.min.js" defer></script><script type="text/javascript" src="/lib/waline/waline.js" defer></script><script type="text/javascript" src="/js/waline.min.js" defer></script></div>
+</body>
+
+</html>
