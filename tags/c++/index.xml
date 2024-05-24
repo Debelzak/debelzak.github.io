@@ -12,8 +12,7 @@
     </author><guid>https://debelzak.github.io/utilizando-o-cmake/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="/utilizando-o-cmake/images/featured-image.png" referrerpolicy="no-referrer">
-            </div><h1 id="utilizando-o-cmake" class="headerLink">
-    <a href="#utilizando-o-cmake" class="header-mark"></a>Utilizando o CMake</h1><p>O <code>CMakeConfig.txt</code> é um arquivo de configuração utilizado pelo CMake para definir como um projeto deve ser construído, incluindo definições de variáveis, opções de compilação, diretórios de inclusão e outras configurações necessárias. É uma boa escolha especialmente para fazer projetos multiplataforma em C/C++.</p>
+            </div><p>O <code>CMakeConfig.txt</code> é um arquivo de configuração utilizado pelo CMake para definir como um projeto deve ser construído, incluindo definições de variáveis, opções de compilação, diretórios de inclusão e outras configurações necessárias. É uma boa escolha especialmente para fazer projetos multiplataforma em C/C++.</p>
 <h2 id="criando-um-projeto-com-o-cmake" class="headerLink">
     <a href="#criando-um-projeto-com-o-cmake" class="header-mark"></a>Criando um projeto com o CMake</h2><p>O primeiro passo para criar um projeto utilizando o CMake é criando um arquivo <code>CMakeConfig.txt</code> na raiz do projeto.</p>
 <div class="highlight"><div class="chroma">
@@ -90,8 +89,7 @@
     </author><guid>https://debelzak.github.io/extern-c/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="/extern-c/images/extern-cpp.jpg" referrerpolicy="no-referrer">
-            </div><h1 id="modificador-extern-c" class="headerLink">
-    <a href="#modificador-extern-c" class="header-mark"></a>Modificador <code>extern &quot;C&quot;</code></h1><p>Durante a compilação de um código em C++, o compilador altera os nomes das funções e símbolos no binário. Esse processo é chamado de <code>name mangling</code> e garante que cada símbolo tenha um identificador único. Isso é necessário, por exemplo, para suportar a sobrecarga de funções. Em C, os nomes das funções são mantidos como no código original.</p>
+            </div><p>Durante a compilação de um código em C++, o compilador altera os nomes das funções e símbolos no binário. Esse processo é chamado de <code>name mangling</code> e garante que cada símbolo tenha um identificador único. Isso é necessário, por exemplo, para suportar a sobrecarga de funções. Em C, os nomes das funções são mantidos como no código original.</p>
 <p>Para evitar essa renomeação (name mangling) em C++, utilizamos o modificador <code>extern &quot;C&quot;</code>. Esse modificador instrui o compilador a não alterar os nomes dos símbolos, mantendo-os como no código original, o que é útil ao criar bibliotecas que precisam ser usadas em outros projetos e linguagens.</p>
 <h3 id="exemplo-prático" class="headerLink">
     <a href="#exemplo-pr%c3%a1tico" class="header-mark"></a>Exemplo prático</h3><p>app.cpp</p>
