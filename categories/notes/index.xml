@@ -1,0 +1,25 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Notes - Categoria - #/home/maru</title>
+        <link>https://debelzak.github.io/categories/notes/</link>
+        <description>Notes - Categoria - #/home/maru</description>
+        <generator>Hugo -- gohugo.io</generator><language>pt-br</language><lastBuildDate>Thu, 23 May 2024 14:40:00 -0300</lastBuildDate><atom:link href="https://debelzak.github.io/categories/notes/" rel="self" type="application/rss+xml" /><item>
+    <title>Utilizando o CMake</title>
+    <link>https://debelzak.github.io/posts/utilizando-o-cmake/</link>
+    <pubDate>Thu, 23 May 2024 14:40:00 -0300</pubDate><author>
+        <name>Debelzak</name>
+    </author><guid>https://debelzak.github.io/posts/utilizando-o-cmake/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/utilizando-o-cmake/images/featured-image.png" referrerpolicy="no-referrer">
+            </div>Anotações de como utilizar o CMake para criar projetos C++.]]></description>
+</item><item>
+    <title>Modificador extern &#34;C&#34;</title>
+    <link>https://debelzak.github.io/posts/extern-c/</link>
+    <pubDate>Wed, 22 May 2024 14:40:00 -0300</pubDate><author>
+        <name>Debelzak</name>
+    </author><guid>https://debelzak.github.io/posts/extern-c/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/extern-c/images/featured-image.jpg" referrerpolicy="no-referrer">
+            </div>Esta anotação se refere ao modificador de C++.]]></description>
+</item></channel>
+</rss>
