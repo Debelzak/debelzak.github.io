@@ -3,7 +3,16 @@
         <title>Notes - Categoria - #/home/maru</title>
         <link>https://debelzak.github.io/categories/notes/</link>
         <description>Notes - Categoria - #/home/maru</description>
-        <generator>Hugo -- gohugo.io</generator><language>pt-br</language><lastBuildDate>Thu, 23 May 2024 14:40:00 -0300</lastBuildDate><atom:link href="https://debelzak.github.io/categories/notes/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>pt-br</language><lastBuildDate>Mon, 18 Nov 2024 14:40:00 -0300</lastBuildDate><atom:link href="https://debelzak.github.io/categories/notes/" rel="self" type="application/rss+xml" /><item>
+    <title>Anotação de Teste</title>
+    <link>https://debelzak.github.io/posts/anotacao-teste/</link>
+    <pubDate>Mon, 18 Nov 2024 14:40:00 -0300</pubDate><author>
+        <name>Debelzak</name>
+    </author><guid>https://debelzak.github.io/posts/anotacao-teste/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="images/featured-image.jpg" referrerpolicy="no-referrer">
+            </div>Teste]]></description>
+</item><item>
     <title>Utilizando o CMake</title>
     <link>https://debelzak.github.io/posts/utilizando-o-cmake/</link>
     <pubDate>Thu, 23 May 2024 14:40:00 -0300</pubDate><author>
