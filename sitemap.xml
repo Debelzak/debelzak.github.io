@@ -2,12 +2,13 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://debelzak.github.io/</loc><lastmod>2024-11-18T14:56:50-03:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://debelzak.github.io/posts/</loc><lastmod>2024-11-18T14:56:50-03:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://debelzak.github.io/tags/c&#43;&#43;/</loc><lastmod>2024-11-13T12:21:54-03:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://debelzak.github.io/categories/</loc><lastmod>2024-11-13T12:21:54-03:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://debelzak.github.io/categories/guide/</loc><lastmod>2024-11-13T12:21:54-03:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://debelzak.github.io/categories/notes/</loc><lastmod>2024-11-13T12:21:54-03:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://debelzak.github.io/tags/</loc><lastmod>2024-11-13T12:21:54-03:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://debelzak.github.io/posts/utilizando-o-cmake/</loc><lastmod>2024-11-13T12:21:54-03:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://debelzak.github.io/posts/extern-c/</loc><lastmod>2024-11-13T12:21:54-03:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url></urlset>
+            <loc>https://debelzak.github.io/</loc><lastmod>2025-12-11T11:55:00-03:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://debelzak.github.io/posts/criando-golden-images-para-vm/</loc><lastmod>2025-12-11T11:55:00-03:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://debelzak.github.io/posts/</loc><lastmod>2025-12-11T11:55:00-03:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://debelzak.github.io/tags/c&#43;&#43;/</loc><lastmod>2024-11-13T12:21:54-03:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://debelzak.github.io/categories/</loc><lastmod>2024-11-13T12:21:54-03:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://debelzak.github.io/categories/guide/</loc><lastmod>2024-11-13T12:21:54-03:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://debelzak.github.io/categories/notes/</loc><lastmod>2024-11-13T12:21:54-03:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://debelzak.github.io/tags/</loc><lastmod>2024-11-13T12:21:54-03:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://debelzak.github.io/posts/utilizando-o-cmake/</loc><lastmod>2024-11-13T12:21:54-03:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://debelzak.github.io/posts/extern-c/</loc><lastmod>2024-11-13T12:21:54-03:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url></urlset>
